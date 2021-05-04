@@ -20,14 +20,15 @@ public class ThreadUomo extends Thread {
 
     public void run() {
      
-            uomo.P();
+            uomo.P();//vedo se il bagno è libero, se non è libero vado in wait
             System.out.println(Thread.currentThread().getName() + " è entrato nel bagno");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadUomo.class.getName()).log(Level.SEVERE, null, ex);
             }
-            uomo.V();
+            System.out.println(Thread.currentThread().getName() + "Esce dal bagno");
+            uomo.V();//rilascio il bagno
     
     }
 }
